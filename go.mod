@@ -1,3 +1,3 @@
-module github.com/iluxa/tracerproto
+module github.com/kubeshark/tracerproto
 
 go 1.19
