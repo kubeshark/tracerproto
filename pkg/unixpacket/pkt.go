@@ -7,7 +7,7 @@ import (
 type PacketDirection uint8
 
 const (
-	PacketRecived PacketDirection = 0
+	PacketReceived PacketDirection = 0
 	PacketSent    PacketDirection = 1
 )
 
