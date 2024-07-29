@@ -30,16 +30,15 @@ func NewWriter(w io.Writer) Writer {
 	}
 }
 
-func (s Writer) Write(ev trace.Event) error {
+func (s Writer) Write(ev any) error {
 	return s.enc.Encode(ev)
 }
 
-func (s Reader) Read() (SysEvent, error) {
-	var ev trace.Event
-	if err := s.dec.Decode(&ev); err != nil {
-		return SysEvent(ev), err
+func (s Reader) Read(ev any) error {
+	if err := s.dec.Decode(ev); err != nil {
+		return err
 	}
-	return SysEvent(ev), nil
+	return nil
 }
 
 func init() {
